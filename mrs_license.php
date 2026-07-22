@@ -20,7 +20,7 @@
 <body>
 <h1>Music Request System LITE</h1>
 <h2>Software License</h2>
-<p style="font-family:'Courier New',monospace;"><?php echo nl2br(file_get_contents("mrs_license.txt")); ?></p>
+<p style="font-family:'Courier New',monospace;"><?php echo nl2br(file_get_contents("LICENSE.md")); ?></p>
 <p><a href="about.php">Abscond</a></p>
 </body>
 </html>
