@@ -70,6 +70,12 @@
 		$stale_marker=file_get_contents($database_folder . "stale_requests.txt");
 	}
 	
+	$stale_marker=date_default_timezone_get();
+	if(file_exists($database_folder . "timezone.txt"))
+	{
+		date_default_timezone_set(file_get_contents($database_folder . "timezone.txt"));
+	}
+	
 	usort($requests["New"],"sort_reqs_asc");
 	usort($requests["Queued"],"sort_reqs_asc");
 	usort($requests["Done"],"sort_reqs_desc");
@@ -101,7 +107,7 @@
 	{
 		echo("<p>You are currently in administrative mode! <a href=\"logout.php\">Log off</a><br>");
 		echo("<a href=\"admin.php\">Admin console</a> | <a href=\"post.php\">Make request</a> | ");
-		if(file_exists($database_folder . "open.txt") && file_exists($database_folder . "open.txt") == "y")
+		if(file_exists($database_folder . "open.txt") && file_get_contents($database_folder . "open.txt") == "y")
 		{
 			echo("<a href=\"close_system.php\">Hold the line</a> | ");
 		}
