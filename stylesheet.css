@@ -1,0 +1,9 @@
+body { color:#000000; background-color:#FFFFFF; background-image:url('background.gif'); background-repeat:repeat; }
+
+a  { color:#FFFFFF; background-color:#0000FF; }
+a:visited { color:#FFFFFF; background-color:#800080; }
+a:hover { color:#000000; background-color:#00FF00; }
+a:active { color:#000000; background-color:#FF0000; }
+
+h1 { text-align:center; text-decoration:underline; }
+h2 { text-align:center; }
