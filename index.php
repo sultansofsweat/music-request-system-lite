@@ -129,7 +129,7 @@
 	}
 	echo("<a href=\"about.php\">About the MRS</a></p>");
 	
-	echo("<p>There are currently " . count($requests["New"]) . " <b><u>new</u></b> requests on the system, " . count($requests["Queued"]) . " requests in-queue, and an all-time total of " . array_sum($requests) . " requests made.</p>");
+	echo("<p>There are currently " . count($requests["New"]) . " <b><u>new</u></b> requests on the system, " . count($requests["Queued"]) . " requests in-queue, and an all-time total of " . (count($requests["New"])+count($requests["Queued"])+count($requests["Done"])) . " requests made.</p>");
 ?>
 <hr>
 <?php
@@ -139,7 +139,7 @@
 		{
 			echo("<p><b><u>" . $request["Text"] . "<br>
 			Requested by: " . $request["User"] . ", on " . date($date_format,$request["Time"]) . "<br>
-			Request has not been acknowledged yet!<br>");
+			Request has not been acknowledged yet!</u></b><br>");
 			if($admin === true)
 			{
 				echo("<a href=\"info.php?req=" . $request["ID"] . "\">More info</a> | <a href=\"queue.php?req=" . $request["ID"] . "\">Queue request</a> | <a href=\"decline.php?req=" . $request["ID"] . "\">Decline request</a> | <a href=\"edit.php?req=" . $request["ID"] . "\">Edit request</a> | <a href=\"delete.php?req=" . $request["ID"] . "\">Delete request</a> | <a href=\"ban.php?req=" . $request["ID"] . "\">Ban user</a>");
@@ -148,7 +148,7 @@
 			{
 				echo("<a href=\"edit.php?req=" . $request["ID"] . "\">Edit request</a> | <a href=\"delete.php?req=" . $request["ID"] . "\">Delete request</a>");
 			}
-			echo("</u></b></p><hr>");
+			echo("</p><hr>");
 		}
 	}
 	if(count($requests["Queued"]) > 0)
@@ -187,12 +187,12 @@
 			{
 				echo("Request has been declined!");
 			}
-			echo("<br>");
+			echo("</i><br>");
 			if($admin === true)
 			{
 				echo("<a href=\"info.php?req=" . $request["ID"] . "\">More info</a>");
 			}
-			echo("</i></p><hr>");
+			echo("</p><hr>");
 		}
 	}
 ?>
