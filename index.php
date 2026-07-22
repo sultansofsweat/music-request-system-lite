@@ -179,7 +179,7 @@
 			}
 			echo("<p><i>" . $request["Text"] . "<br>
 			Requested by: " . $request["User"] . ", on " . date($date_format,$request["Time"]) . "<br>");
-			if($request["Status"] === true)
+			if($request["Status"] == 3)
 			{
 				echo("Request has already been played!");
 			}

@@ -26,7 +26,7 @@
 	}
 	
 	$editable=false;
-	if(in_array($request_id,array_keys($requests["New"])))
+	if(in_array($request_id,array_keys($requests["New"])) || in_array($request_id,array_keys($requests["Queued"])))
 	{
 		$editable=true;
 	}
@@ -108,7 +108,7 @@
 <form method="get" action="delete.php">
 <input type="hidden" name="s" value="y">
 <input type="hidden" name="req" value="<?php echo $request_id; ?>">
-Please note that this is PERMANENT and IIREVERSIBLE!!!<br><br>
+Please note that this is PERMANENT and IRREVERSIBLE!!!<br><br>
 <input type="submit" value="Confirm delete" <?php if($disabled === true) { echo "disabled=\"disabled\""; } ?>>
 </form>
 <p><a href="index.php">Never mind</a></p>
