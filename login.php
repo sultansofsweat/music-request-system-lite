@@ -15,7 +15,7 @@
 	$redirect_page="index.php";
 	if(!empty($_GET['ref']))
 	{
-		$redirect_page=preg_replace("/[^a-z]/","",$_GET['ref']) . ".php";
+		$redirect_page=preg_replace("/[^a-z\_]/","",$_GET['ref']) . ".php";
 	}
 	if(!file_exists($redirect_page))
 	{
@@ -54,7 +54,7 @@
 	{
 		if(!empty($_POST['ref']))
 		{
-			$redirect_page=preg_replace("/[^a-z]/","",$_POST['ref']) . ".php";
+			$redirect_page=preg_replace("/[^a-z\_]/","",$_POST['ref']) . ".php";
 		}
 		if(!file_exists($redirect_page))
 		{

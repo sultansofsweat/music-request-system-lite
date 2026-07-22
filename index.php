@@ -70,7 +70,6 @@
 		$stale_marker=file_get_contents($database_folder . "stale_requests.txt");
 	}
 	
-	$stale_marker=date_default_timezone_get();
 	if(file_exists($database_folder . "timezone.txt"))
 	{
 		date_default_timezone_set(file_get_contents($database_folder . "timezone.txt"));

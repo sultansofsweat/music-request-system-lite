@@ -149,7 +149,7 @@
 			{
 				$good=false;
 			}
-			$fh=@fopen($database_folder . "date_format.txt",'w');
+			$fh=@fopen($database_folder . "anon.txt",'w');
 			if($fh)
 			{
 				@fwrite($fh,"n");
@@ -159,7 +159,27 @@
 			{
 				$good=false;
 			}
+			$fh=@fopen($database_folder . "restrict.txt",'w');
+			if($fh)
+			{
+				@fwrite($fh,"1");
+				@fclose($fh);
+			}
+			else
+			{
+				$good=false;
+			}
 			$fh=@fopen($database_folder . "stale_requests.txt",'w');
+			if($fh)
+			{
+				@fwrite($fh,"72");
+				@fclose($fh);
+			}
+			else
+			{
+				$good=false;
+			}
+			$fh=@fopen($database_folder . "date_format.txt",'w');
 			if($fh)
 			{
 				@fwrite($fh,"l F jS, Y, g:i A T");

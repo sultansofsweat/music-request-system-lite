@@ -16,7 +16,7 @@
 ?>
 <html>
 <head>
-<title>Music Request System LITE - Admin Login</title>
+<title>Music Request System LITE - Admin Logout</title>
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="stylesheet.css">
 </head>
