@@ -98,7 +98,7 @@
 		if($good === true)
 		{
 			echo("Checking installed PHP version...");
-			if(PHP_VERSION_ID >= 50201)
+			if(PHP_VERSION_ID >= 50307)
 			{
 				echo("DONE.<br>");
 			}

@@ -113,7 +113,7 @@
 	else
 	{
 		echo("<a href=\"login.php\">Log in as admin</a> | <a href=\"rules.php\">Request rules</a> | ");
-		if(file_exists($database_folder . "open.txt") && file_exists($database_folder . "open.txt") == "y")
+		if(file_exists($database_folder . "open.txt") && file_get_contents($database_folder . "open.txt") == "y")
 		{
 			echo("<a href=\"post.php\">Make request</a> | ");
 		}
