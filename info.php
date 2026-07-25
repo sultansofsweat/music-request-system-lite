@@ -137,6 +137,18 @@ Edited by BOFH?&nbsp;
 	}
 ?>
 <br>
+Last action:&nbsp;
+<?php
+	if(!empty($request["LastAction"]))
+	{
+		echo($request["LastAction"][0] . " at " . date($date_format,$request["LastAction"][1]));
+	}
+	else
+	{
+		echo "N/A";
+	}
+?>
+<br>
 <p><a href="index.php">Abscond</a></p>
 </body>
 </html>

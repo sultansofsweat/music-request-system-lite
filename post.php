@@ -114,6 +114,20 @@
 	}
 	if(in_array($username,$ban_list["Usernames"]) || in_array($_SERVER['REMOTE_ADDR'],$ban_list["IPs"]))
 	{
+		if(!in_array($username,$ban_list["Usernames"]))
+		{
+			$ban_list["Usernames"][]=$username;
+		}
+		if(!in_array($_SERVER['REMOTE_ADDR'],$ban_list["IPs"]))
+		{
+			$ban_list["IPs"][]=$_SERVER['REMOTE_ADDR'];
+		}
+		$fh=@fopen($database_folder . "banned.txt",'w');
+		if($fh)
+		{
+			@fwrite($fh,serialize($ban_list));
+			@fclose($fh);
+		}
 		echo("<p><b>HOLD THE LINE</b>! You have been BANNED from making requests.</p>");
 		$disabled=true;
 	}

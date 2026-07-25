@@ -69,6 +69,7 @@
 			}
 		}
 		
+		$ban_list=array("Usernames"=>array(),"IPs"=>array());
 		if(!empty($ips))
 		{
 			foreach($ips as $ip)
